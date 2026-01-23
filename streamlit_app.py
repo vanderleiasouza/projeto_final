@@ -54,4 +54,4 @@ st.markdown(
 "---"
 
 
-st.write("Você escolheu:", optionMenu)
+

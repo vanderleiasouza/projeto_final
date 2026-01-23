@@ -21,11 +21,11 @@ with st.form("formFirebase"):
             novoUsuario.set(
                 {
                     "nome": nome,
-                    "apelido": apelido,
+                    "Apelido": apelido,
                     "senha": senha,   
                 }
             )
-            st.sucess("Usuário Cadastrado!")
+            st.success("Usuário Cadastrado!")
         else:
             st.error("Informe seu Nome, Apelido e Senha, por favor")
 
@@ -36,8 +36,8 @@ usuarios = baseDados.collection("usuarios").stream()
 for usuarioRef in usuarios:
 
     usuario = usuarioRef.to_dict()
-    nomeUsuario = usuario ("nome")
-    apelidoUsuario = usuario ("apelido")
+    nomeUsuario = usuario ["nome"]
+    apelidoUsuario = usuario ["Apelido"]
     st.subheader(f"Usuário {apelidoUsuario}")
     st.write(f":material/person: Nome: {nomeUsuario} com {apelidoUsuario}")
 
